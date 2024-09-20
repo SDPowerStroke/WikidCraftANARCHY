@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Port Example</title>
+</head>
+<body>
+    <h1>Open Port Example</h1>
+    <button id="open-port-button">Open Port</button>
+    
+    <script>
+        document.getElementById('open-port-button').addEventListener('click', function() {
+            fetch('http://localhost:3000/open-port', {
+                method: 'POST'
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>
